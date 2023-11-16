@@ -183,11 +183,12 @@ nav {
 .menuType p {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .menuImgs {
   display: grid;
-  gap: 12px;
+  gap: 20px;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   justify-content: center;
@@ -196,6 +197,7 @@ nav {
 .menuImgs img {
   animation: entry 0.8s both;
   width: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
 .contact,
