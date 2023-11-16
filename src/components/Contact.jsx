@@ -3,7 +3,6 @@ import Call from '../assets/imgs/call.svg';
 import Mail from '../assets/imgs/mail.svg';
 
 const Contact = () => {
-  // Change this to a grid layout for flexible sizing
   return (
     <div className="contact">
       <h1>Contact Us</h1>

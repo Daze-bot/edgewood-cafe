@@ -1,3 +1,13 @@
+:root {
+  --edgewood-red: #b84f49;
+  --edgewood-yellow: #eca238;
+}
+
+@font-face {
+  font-family: 'Folkard';
+  src: url('../assets/fonts/folkard_.ttf');
+}
+
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -29,14 +39,14 @@ h2 {
 nav {
   min-height: 95px;
   z-index: 10;
-  background: white;
+  background: var(--edgewood-yellow);
   position: sticky;
   top: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: stretch;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .navLogo {
@@ -62,7 +72,7 @@ nav {
 }
 
 .navLinks li {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .navLinks li:hover {
@@ -71,9 +81,14 @@ nav {
 
 .menu,
 .about,
+.contact,
+.home {
+  animation: slide 0.8s both;
+}
+
+.menu,
+.about,
 .contact {
-  max-width: 1600px;
-  margin: 0 auto;
   background-color: #fff;
   min-height: calc(100vh - 95px);
   padding: 16px 64px 0;
@@ -81,14 +96,99 @@ nav {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-.contact {
+.home {
+  background-color: #fff;
+  min-height: calc(100vh - 95px);
+  padding: 16px 64px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.contact h1 {
+.home h1 {
+  font-size: 7rem;
+  font-family: 'Folkard';
+  margin-top: 50px;
+}
+
+.contact h1,
+.menu h1,
+.about h1 {
+  text-align: center;
   margin-top: 24px;
+  font-family: 'Folkard';
+  font-size: 2.5rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.menuButtons {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.menuButtons button {
+  padding: 12px 0;
+  width: 160px;
+  font-size: 1.4rem;
+  border: 1px solid black;
+  border-radius: 12px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menuButtons button:hover {
+  background-color: black;
+  color: white;
+}
+
+.menuType {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.menuType p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menuImgs {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  justify-content: center;
+}
+
+.menuImgs img {
+  animation: entry 1s both;
+  width: 100%;
+}
+
+.contact,
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.about h1 {
+  margin-bottom: 82px;
+}
+
+.contact h1 {
   margin-bottom: 82px;
 }
 
@@ -109,8 +209,10 @@ nav {
 
 .allContacts {
   width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 350px);
+  gap: 60px;
 }
 
 .allContacts p {
@@ -124,8 +226,6 @@ nav {
 }
 
 .allContacts > div {
-  max-width: 350px;
-  min-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,4 +255,24 @@ nav {
 .allContacts button:hover {
   background-color: black;
   color: white;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes entry {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
