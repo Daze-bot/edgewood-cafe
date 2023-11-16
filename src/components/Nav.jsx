@@ -17,7 +17,7 @@ const Nav = () => {
 
   const handleWindowSize = () => {
     setWindowWidth(window.innerWidth);
-    if (windowWidth >= 640) {
+    if (windowWidth > 640) {
       setMobileNav(false);
     }
   };
