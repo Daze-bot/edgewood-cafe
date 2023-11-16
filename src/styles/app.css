@@ -89,7 +89,7 @@ nav button {
 .about,
 .contact,
 .home {
-  animation: slide 0.8s both;
+  animation: slide 1s forwards;
 }
 
 .menu,
@@ -203,7 +203,7 @@ nav button {
 }
 
 .menuImgs img {
-  animation: entry 0.8s both;
+  animation: entry 0.8s;
   width: 100%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
@@ -295,13 +295,19 @@ nav button {
     display: flex;
     position: absolute;
     right: 12vw;
-    top: 18px;
+    top: 8px;
     justify-content: center;
     align-items: center;
     background-color: var(--edgewood-yellow);
     outline: none;
     border: none;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  nav button:active {
+    filter: brightness(.8);
   }
   
   nav {
@@ -326,10 +332,20 @@ nav button {
     font-weight: 700;
     overflow: hidden;
     height: 0;
+    transition: height 400ms ease-in-out;
   }
 
-  .navLinks a > li {
+  .navLinks > a {
     margin-top: 2rem;
+  }
+
+  .navLinks a {
+    padding: 10px;
+  }
+
+  .navLinks a:active {
+    background-color: var(--edgewood-red);
+    filter: brightness(.8);
   }
 
   .navLinks li {
@@ -359,6 +375,7 @@ nav button {
   .home,
   .about {
     padding: 76px 16px 16px;
+    animation: none;
   }
 
   .menuButtons {
@@ -390,8 +407,8 @@ nav button {
 
 @keyframes slide {
   0% {
-    transform: translateY(-20px);
-    opacity: 0.5;
+    transform: translateY(-10px);
+    opacity: 0.3;
   }
   100% {
     transform: translateY(0);
