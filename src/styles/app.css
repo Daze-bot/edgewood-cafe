@@ -109,6 +109,29 @@ nav {
   font-size: 7rem;
   font-family: 'Folkard';
   margin-top: 50px;
+  text-align: center;
+}
+
+.home img {
+  width: 500px;
+  border-radius: 8px;
+}
+
+.home p {
+  font-size: 1.8rem;
+  margin-top: 20px;
+}
+
+.home span {
+  font-size: 1.4rem;
+  margin-top: 20px;
+}
+
+.home hr {
+  border-top: 1px solid var(--edgewood-red);
+  outline: none;
+  margin-top: 20px;
+  width: 10%;
 }
 
 .contact h1,
@@ -171,7 +194,7 @@ nav {
 }
 
 .menuImgs img {
-  animation: entry 1s both;
+  animation: entry 0.8s both;
   width: 100%;
 }
 
