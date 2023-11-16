@@ -1,55 +1,70 @@
 import { Link } from "react-router-dom";
 import Logo from '../assets/imgs/logo.png';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import MobileMenu from '../assets/imgs/mobile-menu.svg';
 
 const Nav = () => {
-  // Make a 3-line button for mobile nav
-  // Use css to hide button unless mobile
-  // Normal nav should be hidden on mobile
-  // Pressing button will pull up the nav on the screen for use
-
   const [mobileNav, setMobileNav] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const showNav = () => {
     if (mobileNav === false) {
-      setMobileNav(true)
+      setMobileNav(true);
     } else if (mobileNav === true) {
-      setMobileNav(false)
+      setMobileNav(false);
     }
   }
 
+  const handleWindowSize = () => {
+    setWindowWidth(window.innerWidth);
+    if (windowWidth >= 640) {
+      setMobileNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowSize);
+    };
+  },[windowWidth]);
+
   if (mobileNav) {
     return (
-      <div className="mobileNav">
-        <nav>
-          <button onClick={showNav}>Show</button>
-          <div className="navLogo">
-            <Link to={'/'}>
-              <img src={Logo} alt="Logo"></img>
-            </Link>
-          </div>
-        </nav>
-        <ul className="mobileNavLinks">
-            <Link to='/' onClick={showNav}>
-              <li>Home</li>
-            </Link>
-            <Link to='/menu' onClick={showNav}>
-              <li>Menu</li>
-            </Link>
-            <Link to='/about' onClick={showNav}>
-              <li>About</li>
-            </Link>
-            <Link to='/contact' onClick={showNav}>
-              <li>Contact</li>
-            </Link>
-          </ul>
-      </div>
+      <nav>
+        <div className="navLogo">
+          <Link to={'/'} onClick={showNav}>
+            <img src={Logo} alt="Logo"></img>
+          </Link>
+        </div>
+        <ul className="navLinks" 
+          style={{
+            height: 'calc(100vh - 60px'
+          }}
+        >
+          <Link to='/' onClick={showNav}>
+            <li>Home</li>
+          </Link>
+          <Link to='/menu' onClick={showNav}>
+            <li>Menu</li>
+          </Link>
+          <Link to='/about' onClick={showNav}>
+            <li>About</li>
+          </Link>
+          <Link to='/contact' onClick={showNav}>
+            <li>Contact</li>
+          </Link>
+        </ul>
+        <button onClick={showNav}>
+          <img src={MobileMenu}></img>
+        </button>
+      </nav>
     )
   }
 
   return (
     <nav>
-      <button onClick={showNav}>Show</button>
       <div className="navLogo">
         <Link to={'/'}>
           <img src={Logo} alt="Logo"></img>
@@ -69,6 +84,9 @@ const Nav = () => {
           <li>Contact</li>
         </Link>
       </ul>
+      <button onClick={showNav}>
+        <img src={MobileMenu}></img>
+      </button>
     </nav>
   )
 }
