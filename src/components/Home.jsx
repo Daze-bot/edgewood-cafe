@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import Drawing from '../assets/imgs/drawing.jpg';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="home">
       <h1>Edgewood Cafe</h1>

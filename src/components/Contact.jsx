@@ -1,8 +1,13 @@
 import Facebook from '../assets/imgs/facebook.svg';
 import Call from '../assets/imgs/call.svg';
 import Mail from '../assets/imgs/mail.svg';
+import { useEffect } from 'react';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="contact">
       <h1>Contact Us</h1>

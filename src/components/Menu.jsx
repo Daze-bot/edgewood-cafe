@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Breakfast from "./Breakfast";
 import Lunch from "./Lunch";
 
@@ -15,6 +15,10 @@ const Menu = () => {
     setShowBreakfast(false);
     setShowLunch(true);
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="menu">
