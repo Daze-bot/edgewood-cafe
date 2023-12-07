@@ -67,9 +67,9 @@ nav button {
 .navLinks {
   width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
-  gap: 8px;
+  gap: 10vw;
 }
 
 .navLinks a {

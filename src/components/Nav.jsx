@@ -49,9 +49,6 @@ const Nav = () => {
           <Link to='/menu' onClick={showNav}>
             <li>Menu</li>
           </Link>
-          <Link to='/about' onClick={showNav}>
-            <li>About</li>
-          </Link>
           <Link to='/contact' onClick={showNav}>
             <li>Contact</li>
           </Link>
@@ -76,9 +73,6 @@ const Nav = () => {
         </Link>
         <Link to='/menu'>
           <li>Menu</li>
-        </Link>
-        <Link to='/about'>
-          <li>About</li>
         </Link>
         <Link to='/contact'>
           <li>Contact</li>
