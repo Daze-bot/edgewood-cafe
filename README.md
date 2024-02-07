@@ -12,7 +12,7 @@ Fully responsive, official company website
 
 This website was made for the owner of Edgewood Cafe, in order to establish an online presence to better serve their customers.
 
-### <a href="https://daze-blog-view.netlify.app/" target="_blank">View Live</a>
+### <a href="https://edgewoodcafeyardley.com/" target="_blank">View Live</a>
 
 ### Features
 
@@ -26,6 +26,7 @@ This website was made for the owner of Edgewood Cafe, in order to establish an o
 - React
 - React-Router
 - Netlify hosting
+- GoDaddy Domain Management
 
 ## Getting started
 
