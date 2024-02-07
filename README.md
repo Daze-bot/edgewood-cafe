@@ -26,7 +26,7 @@ This website was made for the owner of Edgewood Cafe, in order to establish an o
 - React
 - React-Router
 - Netlify hosting
-- GoDaddy Domain Management
+- GoDaddy domain management
 
 ## Getting started
 
