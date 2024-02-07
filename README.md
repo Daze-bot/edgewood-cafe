@@ -16,7 +16,7 @@ This website was made for the owner of Edgewood Cafe, in order to establish an o
 
 ### Features
 
-- Includes address and restaurant hours, menus, and contact info
+- Includes restaurant address and hours, menus, and contact info
 - Link to the company facebook
 - Fully responsive for all screen sizes, including a mobile menu
 
