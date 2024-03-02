@@ -136,6 +136,12 @@ nav button {
   text-align: center;
 }
 
+.home h3 {
+  font-size: 1.8rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
 .home hr {
   border-top: 1px solid var(--edgewood-red);
   outline: none;
