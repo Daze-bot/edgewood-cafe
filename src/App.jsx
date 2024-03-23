@@ -6,8 +6,23 @@ import ErrorPage from './components/ErrorPage';
 import './styles/app.css';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import About from './components/About';
+import { useState, useEffect } from 'react';
 
 const App = () => {
+  const [currentAlert, setCurrentAlert] = useState("");
+
+  useEffect(() => {
+    fetchMessage();
+  },[]);
+
+  const fetchMessage = () => {
+    fetch('https://daze-api.adaptable.app/edgewood/alerts/recent')
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => setCurrentAlert(data.data.text));
+  };
+
   const NavWrapper = () => {
     return (
       <div className='app'>
@@ -25,7 +40,9 @@ const App = () => {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home 
+            currentAlert={currentAlert}
+          />,
         },
         {
           path: "/menu",
