@@ -11,7 +11,8 @@ import { useState, useEffect } from 'react';
 const App = () => {
   const [currentAlert, setCurrentAlert] = useState("");
 
-  useEffect(() => {
+  // Need to move the server to a new host
+  /* useEffect(() => {
     fetchMessage();
   },[]);
 
@@ -21,7 +22,7 @@ const App = () => {
         return res.json();
       })
       .then((data) => setCurrentAlert(data.data.text));
-  };
+  }; */
 
   const NavWrapper = () => {
     return (
